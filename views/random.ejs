@@ -14,6 +14,12 @@
     </head>
     <body>
         <h1>Your Lucky Number Is: <%= rand %></h1>
+        <% if(rand % 2 === 0) { %>
+            <h2>That is EVEN</h2> 
+       <% } else { %>
+            <h2>That is ODD</h2>
+      <% } %>
+      <%= rand % 2 === 0 ? 'EVEN' : 'ODD' %>
         
         <script src="" async defer></script>
     </body>

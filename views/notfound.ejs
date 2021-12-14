@@ -7,26 +7,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title><%= name %> </title>
+        <title><%= subreddit %> Not Found</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
     <body>
+        <h1>Your request for the <%= subreddit %> Subreddit could not be found</h1>>
         
-        <h1>Welcome to the <%= name %> Subreddit</h1>
-        <h2><%= description %></h2>
-        <h2>Subscribers: <%= subscribers %></h2>
-        <hr>
-        <% for(let post of posts) { %>
-                <aside>
-                    <p><%=post.title%> <b> - <%= post.author %></b></p>
-                    <% if(post.img) { %>
-                        <img src=<%= post.img %> alt=>
-                    <% } %>
-                </aside>
-        <% } %>
-
         <script src="" async defer></script>
     </body>
 </html>

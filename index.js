@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
+const redditData = require('./data.json');
+console.log(redditData);
 
 //don't need to require ejs because of this function
 app.set('view engine', 'ejs');
@@ -16,9 +18,24 @@ app.get('/', (req, res) => {
 })
 
 //What comes after the ":" is a variable we can capture
+//We are passing information from the params of our path (:subreddit)
+//pass that through req.params to destructured var then to our template called subreddit
+//and rendering it into the title and h1
 app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params;
-    res.render('subreddit', {subreddit});
+    const data = redditData[subreddit];
+    if(data) {
+        res.render('subreddit', { ...data });
+    } else{
+        res.render('notfound', { subreddit });
+    } 
+})
+
+app.get('/cats' , (req, res) => {
+    const cats = [
+        'Mik', 'Pop', 'ash', 'ryder', 'arrow'
+    ]
+    res.render('cats', { cats });
 })
 
 app.get('/rand', (req, res) => {
