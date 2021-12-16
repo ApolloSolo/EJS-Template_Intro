@@ -12,6 +12,8 @@ app.set('views', path.join(__dirname, '/views'));
 //and joining the full path to get there, with /views. That way you don't 
 //need to be in the EJS dir to run the app.
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 //res object responds 
 app.get('/', (req, res) => {
     res.render('home');
@@ -41,6 +43,10 @@ app.get('/cats' , (req, res) => {
 app.get('/rand', (req, res) => {
     const num = Math.floor(Math.random() * 500) + 1;
     res.render('random', {rand: num});
+})
+
+app.set('*', (req, res) => {
+    req.render('notfound');
 })
 
 //sets up local server
