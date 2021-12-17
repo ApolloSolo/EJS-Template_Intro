@@ -1,23 +1,10 @@
-<html <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-         
+<%- include('partials/head') %>
+        
+        <%-include('partials/navbar')%>
+
         <h1><%="The Home Page".toUpperCase()%></h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ea tempore tenetur accusantium praesentium accusamus. Voluptatibus non fugit accusantium, vero quaerat, repellendus rem nihil reprehenderit voluptate cumque error molestias ut.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore assumenda, unde similique qui expedita exercitationem, optio porro nisi pariatur, omnis dolor ducimus vitae mollitia perferendis odio perspiciatis sequi velit enim.</p>
 
         <script src="" async defer></script>
-    </body>
-</html>
+<%-include('partials/footer')%>

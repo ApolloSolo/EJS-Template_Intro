@@ -1,32 +1,21 @@
-<html <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title><%= name %> </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/app.css">
-    </head>
-    <body>
+<%- include('partials/head') %>
+
+        <%-include('partials/navbar')%>
         
-        <h1>Welcome to the <%= name %> Subreddit</h1>
-        <h2><%= description %></h2>
-        <h2>Subscribers: <%= subscribers %></h2>
-        <hr>
-        <% for(let post of posts) { %>
+          <div class="container">
+            <h1>Welcome to the <%= name %> Subreddit</h1>
+            <h2><%= description %></h2>
+            <h2>Subscribers: <%= subscribers %></h2>
+            <hr>
+            <% for(let post of posts) { %>
                 <aside>
                     <p><%=post.title%> <b> - <%= post.author %></b></p>
                     <% if(post.img) { %>
                         <img src=<%= post.img %> alt=>
                     <% } %>
                 </aside>
-        <% } %>
+            <% } %>
+          </div>
 
         <script src="" async defer></script>
-    </body>
-</html>
+<%-include('partials/footer')%>
